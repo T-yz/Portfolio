@@ -1,4 +1,4 @@
-# Hello and welcome to my Python portfolio 
+# Hello and Welcome to my Python Portfolio 
 
 I currently have [3] different projects in this section for you to browse 
 
