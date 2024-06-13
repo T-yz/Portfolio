@@ -1,0 +1,65 @@
+city_flight = {
+    "Turkey" : {
+    "price": 120,
+    },
+    "Italy" : {
+    "price": 80,
+    },
+    "Spain" : {
+    "price": 100,
+    },
+}
+# list of cities
+
+num_nights = int(input("How many nights will you need accomadation for? "))
+# number of nights
+ 
+def hotel_cost(hoteldailycost):
+    hotel_overall = hoteldailycost * num_nights
+    print (f"Your hotel cost for the holiday is £{hotel_overall}")
+    return hotel_overall
+# func that calculates hotel cost 
+hotel_cost_var =hotel_cost (hoteldailycost=float(input("What does your hotel charge per day? ")))
+# call func and save result to var 
+def plane_cost (user_flight):
+    cost = None
+    for city, data in city_flight.items():
+        if user_flight == city:
+            cost = float(data["price"])
+            print(f"your flights will cost you £{cost}")
+            return cost
+        else:
+            pass
+    if cost is None:
+        print("Error, please start again")
+    else:
+        pass
+# iterates through list and checks if user input matches
+    
+for city, data in city_flight.items():
+    print(f"{city}")
+print("please type a country name from the available list")
+# provides a list of available countries
+
+user_flight_raw= input("where will you be flying to? ")
+plane_cost_var=float(plane_cost(user_flight = user_flight_raw.capitalize()))
+# calls and saves func result to a float
+
+rental_days = int(input("How many days will you need a rental car for? "))
+# days of using rental
+
+def car_rental(rental_price):
+    car_price_overall = float(rental_days * rental_price)
+    print (f"Your rental car will cost £{car_price_overall} throughout your holiday ")
+    return car_price_overall
+# func that calcs rental car overall cost and returns
+
+car_rental_var = car_rental(rental_price=float(input("how much does it cost to hire the car for a day? ")))
+# call the car_rental func to float var
+
+def holiday_cost():
+    total_cost = plane_cost_var + car_rental_var + hotel_cost_var
+    print(f"your holiday expenses will be £{total_cost}")
+# calcs final cost of holiday
+holiday_cost()
+# calls final func
